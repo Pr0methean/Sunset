@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-9"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.MODULE_PATH"/>
 	<classpathentry excluding="module-info.java" kind="src" path="src/sunset.signal"/>
 	<classpathentry excluding="module-info.java" kind="src" path="src/sunset.signal.sun"/>
 	<classpathentry excluding="module-info.java" kind="src" path="src/sunset.serial.ctor"/>
@@ -9,9 +11,9 @@
 	<classpathentry excluding="module-info.java" kind="src" path="src/sunset.memory.sun"/>
 	<classpathentry excluding="module-info.java" kind="src" path="src/sunset.sneakythrow"/>
 	<classpathentry excluding="module-info.java" kind="src" path="src/sunset.common.sun"/>
-	<classpathentry kind="src" path="src/sunset.sneakythrow.sun"/>
-	<classpathentry kind="src" path="src/sunset.sneakythrow.oldjdk"/>
-	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-9"/>
-	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.MODULE_PATH"/>
+	<classpathentry excluding="module-info.java" kind="src" path="src/sunset.sneakythrow.sun"/>
+	<classpathentry excluding="module-info.java" kind="src" path="src/sunset.sneakythrow.oldjdk"/>
+	<classpathentry kind="src" path="src/sunset.classloader"/>
+	<classpathentry kind="src" path="src/sunset.classloader.sun"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

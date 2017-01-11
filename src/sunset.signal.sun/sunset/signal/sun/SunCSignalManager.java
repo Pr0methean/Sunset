@@ -6,10 +6,13 @@ import java.util.concurrent.ConcurrentHashMap;
 import sun.misc.Signal;
 import sun.misc.SignalHandler;
 import sunset.signal.CSignalHandler;
-import sunset.signal.CSignalService;
+import sunset.signal.CSignalManager;
 import sunset.signal.SignalInfo;
 
-public class SunCSignalService implements CSignalService {
+/**
+ * An implementation of {@link CSignalManager} using {@link Signal} and {@link SignalHandler}.
+ */
+public class SunCSignalManager implements CSignalManager {
   private static final Map<String, SignalInfo> cachedSignalInfos =
       new ConcurrentHashMap<String, SignalInfo>();
   private static final CSignalHandler SIG_DFL = new SignalHandlerWrapper(SignalHandler.SIG_DFL);
@@ -27,12 +30,12 @@ public class SunCSignalService implements CSignalService {
   }
 
   @Override
-  public CSignalHandler lookupDefaultHandler() {
+  public CSignalHandler getSystemDefaultHandler() {
     return SIG_DFL;
   }
 
   @Override
-  public CSignalHandler lookupNoOpHandler() {
+  public CSignalHandler getSystemNoOpHandler() {
     return SIG_IGN;
   }
 

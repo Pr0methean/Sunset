@@ -5,10 +5,10 @@ import sunset.common.SunsetUtil;
 /**
  * A service that allows registration of C/POSIX signal handlers.
  */
-public interface CSignalService {
+public interface CSignalManager {
 
-  static CSignalService getInstance() {
-    return SunsetUtil.loadService(CSignalService.class);
+  static CSignalManager getInstance() {
+    return SunsetUtil.loadService(CSignalManager.class);
   }
 
   /**
@@ -24,13 +24,13 @@ public interface CSignalService {
    *         signal. Where possible, this is implemented by falling through to {@code SIG_DFL}
    *         defined in the C header {@code <signal.h>}.
    */
-  CSignalHandler lookupDefaultHandler();
+  CSignalHandler getSystemDefaultHandler();
 
   /**
    * @return A signal handler that ignores all signals. Where possible, this is implemented by
    *         falling through to {@code SIG_IGN} defined in the C header {@code <signal.h>}.
    */
-  CSignalHandler lookupNoOpHandler();
+  CSignalHandler getSystemNoOpHandler();
 
   /**
    * Registers a signal handler.

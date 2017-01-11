@@ -5,6 +5,9 @@ import sun.reflect.ReflectionFactory;
 
 import sunset.serial.ctor.SerializationConstructorFactory;
 
+/**
+ * An implementation of {@link SerializationConstructorFactory} using {@link ReflectionFactory}.
+ */
 public class SunSerializationConstructorFactory implements SerializationConstructorFactory {
   private final ReflectionFactory factory = ReflectionFactory.getReflectionFactory();
 

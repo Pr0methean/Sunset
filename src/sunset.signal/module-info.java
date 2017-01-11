@@ -1,5 +1,5 @@
 module sunset.signal {
   requires sunset.common;
   exports sunset.signal;
-  uses sunset.signal.CSignalService;
+  uses sunset.signal.CSignalManager;
 }

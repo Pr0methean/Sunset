@@ -1,7 +1,7 @@
 package sunset.signal;
 
 /**
- * Callback interface for a signal handler that can be registered with a {@link CSignalService}.
+ * Callback interface for a signal handler that can be registered with a {@link CSignalManager}.
  */
 public interface CSignalHandler {
 

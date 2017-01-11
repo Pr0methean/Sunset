@@ -2,9 +2,13 @@ package sunset.memory.sun;
 
 import sun.misc.Unsafe;
 import java.lang.reflect.Field;
+
 import sunset.common.sun.SunsetSunUtil;
 import sunset.memory.LowLevelMemoryAccessor;
 
+/**
+ * An implementation of {@link LowLevelMemoryAccessor} using {@link Unsafe}.
+ */
 public class SunLowLevelMemoryAccessor implements LowLevelMemoryAccessor {
 
   private static final Unsafe unsafe = SunsetSunUtil.getTheUnsafe();
