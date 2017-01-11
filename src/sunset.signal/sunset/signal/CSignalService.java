@@ -1,7 +1,6 @@
 package sunset.signal;
 
-import java.util.Optional;
-import java.util.ServiceLoader;
+import sunset.common.SunsetUtil;
 
 /**
  * A service that allows registration of C/POSIX signal handlers.
@@ -9,12 +8,7 @@ import java.util.ServiceLoader;
 public interface CSignalService {
 
   static CSignalService getInstance() {
-    Optional<CSignalService> service = ServiceLoader.load(CSignalService.class).findFirst();
-    if (service.isPresent()) {
-      return service.get();
-    } else {
-      throw new RuntimeException("No implementation of CSignalService installed");
-    }
+    return SunsetUtil.loadService(CSignalService.class);
   }
 
   /**

@@ -2,6 +2,13 @@
 <classpath>
 	<classpathentry excluding="module-info.java" kind="src" path="src/sunset.signal"/>
 	<classpathentry excluding="module-info.java" kind="src" path="src/sunset.signal.sun"/>
+	<classpathentry excluding="module-info.java" kind="src" path="src/sunset.serial.ctor"/>
+	<classpathentry excluding="module-info.java" kind="src" path="src/sunset.serial.ctor.sun"/>
+	<classpathentry kind="src" path="src/sunset.common"/>
+	<classpathentry excluding="module-info.java" kind="src" path="src/sunset.memory"/>
+	<classpathentry excluding="module-info.java" kind="src" path="src/sunset.memory.sun"/>
+	<classpathentry kind="src" path="src/sunset.sneakythrow"/>
+	<classpathentry kind="src" path="src/sunset.common.sun"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-9"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.MODULE_PATH"/>
 	<classpathentry kind="output" path="bin"/>

@@ -1,4 +1,5 @@
 module sunset.signal {
-	exports sunset.signal;
-	uses sunset.signal.CSignalService;
+  requires sunset.common;
+  exports sunset.signal;
+  uses sunset.signal.CSignalService;
 }
