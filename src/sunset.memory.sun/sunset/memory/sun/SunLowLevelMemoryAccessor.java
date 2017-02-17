@@ -12,7 +12,7 @@ import sunset.memory.LowLevelMemoryAccessor;
 public class SunLowLevelMemoryAccessor implements LowLevelMemoryAccessor {
 
   private static final Unsafe unsafe = SunsetSunUtil.getTheUnsafe();
-  
+
   @Override
   public int getInt(Object o, long offset) {
     return unsafe.getInt(o, offset);
@@ -20,7 +20,7 @@ public class SunLowLevelMemoryAccessor implements LowLevelMemoryAccessor {
 
   @Override
   public void putInt(Object o, long offset, int x) {
-    unsafe.putInt(o, offset, x); 
+    unsafe.putInt(o, offset, x);
   }
 
   @Override
@@ -50,7 +50,7 @@ public class SunLowLevelMemoryAccessor implements LowLevelMemoryAccessor {
 
   @Override
   public void putByte(Object o, long offset, byte x) {
-    unsafe.putByte(o, offset, x); 
+    unsafe.putByte(o, offset, x);
   }
 
   @Override
@@ -60,7 +60,7 @@ public class SunLowLevelMemoryAccessor implements LowLevelMemoryAccessor {
 
   @Override
   public void putShort(Object o, long offset, short x) {
-    unsafe.putShort(o, offset,  x);
+    unsafe.putShort(o, offset, x);
   }
 
   @Override

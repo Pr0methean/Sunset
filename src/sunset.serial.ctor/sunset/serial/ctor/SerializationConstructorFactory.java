@@ -20,7 +20,7 @@ import sunset.common.SunsetUtil;
  * http://mydailyjava.blogspot.com/2013/12/sunmiscunsafe.html
  */
 public interface SerializationConstructorFactory {
-  
+
   static SerializationConstructorFactory getInstance() {
     return SunsetUtil.loadService(SerializationConstructorFactory.class);
   }
