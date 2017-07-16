@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="4">
+  <component name="EclipseModuleManager">
+    <conelement value="org.eclipse.jdt.MODULE_PATH" />
+    <src_description expected_position="2">
+      <src_folder value="file://$MODULE_DIR$/src/sunset.signal" expected_position="2" />
+      <src_folder value="file://$MODULE_DIR$/src/sunset.signal.sun" expected_position="3" />
+      <src_folder value="file://$MODULE_DIR$/src/sunset.serial.ctor" expected_position="4" />
+      <src_folder value="file://$MODULE_DIR$/src/sunset.serial.ctor.sun" expected_position="5" />
+      <src_folder value="file://$MODULE_DIR$/src/sunset.common" expected_position="6" />
+      <src_folder value="file://$MODULE_DIR$/src/sunset.memory" expected_position="7" />
+      <src_folder value="file://$MODULE_DIR$/src/sunset.memory.sun" expected_position="8" />
+      <src_folder value="file://$MODULE_DIR$/src/sunset.sneakythrow" expected_position="9" />
+      <src_folder value="file://$MODULE_DIR$/src/sunset.common.sun" expected_position="10" />
+      <src_folder value="file://$MODULE_DIR$/src/sunset.sneakythrow.sun" expected_position="11" />
+      <src_folder value="file://$MODULE_DIR$/src/sunset.sneakythrow.oldjdk" expected_position="12" />
+      <src_folder value="file://$MODULE_DIR$/src/sunset.classloader" expected_position="13" />
+      <src_folder value="file://$MODULE_DIR$/src/sunset.classloader.sun" expected_position="14" />
+      <src_folder value="file://$MODULE_DIR$/test" expected_position="15" />
+    </src_description>
+  </component>
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/bin" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/sunset.signal" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/sunset.signal.sun" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/sunset.serial.ctor" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/sunset.serial.ctor.sun" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/sunset.common" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/sunset.memory" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/sunset.memory.sun" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/sunset.sneakythrow" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/sunset.common.sun" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/sunset.sneakythrow.sun" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/sunset.sneakythrow.oldjdk" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/sunset.classloader" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/sunset.classloader.sun" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="false" />
+    </content>
+    <orderEntry type="jdk" jdkName="1.9" jdkType="JavaSDK" />
+    <orderEntry type="library" exported="" name="org.eclipse.jdt.MODULE_PATH" level="application" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="net.openhft:chronicle-core:1.0.5-alpha" level="project" />
+  </component>
+</module>
