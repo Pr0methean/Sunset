@@ -19,10 +19,10 @@ import sunset.common.SunsetUtil;
  * is invoked is <i>not</i> a superclass of the class actually instantiated), see
  * http://mydailyjava.blogspot.com/2013/12/sunmiscunsafe.html
  */
-public interface SerializationConstructorFactory {
+public interface ConstructorMunger {
 
-  static SerializationConstructorFactory getInstance() {
-    return SunsetUtil.loadService(SerializationConstructorFactory.class);
+  static ConstructorMunger getInstance() {
+    return SunsetUtil.loadService(ConstructorMunger.class);
   }
 
   /**

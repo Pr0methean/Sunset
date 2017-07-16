@@ -14,6 +14,6 @@
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="jdk" jdkName="1.9" jdkType="JavaSDK" />
-    <orderEntry type="module" module-name="sunset.common" />
+    <orderEntry type="module" module-name="sunset.common" exported="" />
   </component>
 </module>

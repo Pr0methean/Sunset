@@ -1,5 +1,8 @@
+import sunset.serial.ctor.ConstructorMunger;
+import sunset.serial.ctor.sun.SunConstructorMunger;
+
 module sunset.serial.ctor.sun {
   requires jdk.unsupported;
   requires sunset.serial.ctor;
-  provides sunset.serial.ctor.SerializationConstructorFactory with sunset.serial.ctor.sun.SunSerializationConstructorFactory;
+  provides ConstructorMunger with SunConstructorMunger;
 }

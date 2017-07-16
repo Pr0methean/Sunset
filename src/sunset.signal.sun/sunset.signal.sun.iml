@@ -12,8 +12,11 @@
       <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/sunset/signal/sun" isTestSource="false" />
     </content>
+    <content url="file://$MODULE_DIR$/../../test/sunset.signal.sun">
+      <sourceFolder url="file://$MODULE_DIR$/../../test/sunset.signal.sun" isTestSource="true" />
+    </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="jdk" jdkName="1.9" jdkType="JavaSDK" />
-    <orderEntry type="module" module-name="sunset.signal" />
+    <orderEntry type="module" module-name="sunset.signal" exported="" />
   </component>
 </module>

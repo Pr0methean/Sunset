@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_sunset.signal" default="compile.module.sunset.signal">
+  <dirname property="module.sunset.signal.basedir" file="${ant.file.module_sunset.signal}"/>
+  
+  <property name="module.jdk.home.sunset.signal" value="${jdk.home.1.9}"/>
+  <property name="module.jdk.bin.sunset.signal" value="${jdk.bin.1.9}"/>
+  <property name="module.jdk.classpath.sunset.signal" value="jdk.classpath.1.9"/>
+  
+  <property name="compiler.args.sunset.signal" value="-encoding UTF-8 -source 9 -target 9 ${compiler.args}"/>
+  
+  <property name="sunset.signal.output.dir" value="${module.sunset.signal.basedir}"/>
+  <property name="sunset.signal.testoutput.dir" value="${module.sunset.signal.basedir}"/>
+  
+  <path id="sunset.signal.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="sunset.signal.module.production.classpath">
+    <path refid="${module.jdk.classpath.sunset.signal}"/>
+    <pathelement location="${sunset.common.output.dir}"/>
+  </path>
+  
+  <path id="sunset.signal.runtime.production.module.classpath">
+    <pathelement location="${sunset.signal.output.dir}"/>
+    <path refid="sunset.common.runtime.production.module.classpath"/>
+  </path>
+  
+  <path id="sunset.signal.module.classpath">
+    <pathelement location="${sunset.signal.output.dir}"/>
+    <path refid="${module.jdk.classpath.sunset.signal}"/>
+    <pathelement location="${sunset.common.output.dir}"/>
+  </path>
+  
+  <path id="sunset.signal.runtime.module.classpath">
+    <pathelement location="${sunset.signal.output.dir}"/>
+    <path refid="sunset.common.runtime.module.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.sunset.signal">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.sunset.signal">
+    <patternset refid="excluded.from.module.sunset.signal"/>
+  </patternset>
+  
+  <path id="sunset.signal.module.sourcepath">
+    <dirset dir="${module.sunset.signal.basedir}/../../src">
+      <include name="sunset.signal"/>
+      <include name="sunset.signal/sunset/signal"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.sunset.signal" depends="compile.module.sunset.signal.production,compile.module.sunset.signal.tests" description="Compile module sunset.signal"/>
+  
+  <target name="compile.module.sunset.signal.production" depends="compile.module.sunset.common" description="Compile module sunset.signal; production classes">
+    <mkdir dir="${sunset.signal.output.dir}"/>
+    <javac destdir="${sunset.signal.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.sunset.signal}/javac">
+      <compilerarg line="${compiler.args.sunset.signal}"/>
+      <bootclasspath refid="sunset.signal.module.bootclasspath"/>
+      <classpath refid="sunset.signal.module.production.classpath"/>
+      <src refid="sunset.signal.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.sunset.signal"/>
+    </javac>
+    
+    <copy todir="${sunset.signal.output.dir}">
+      <fileset dir="${module.sunset.signal.basedir}">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.sunset.signal.basedir}/sunset/signal">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.sunset.signal.tests" depends="compile.module.sunset.signal.production" description="compile module sunset.signal; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.sunset.signal" description="cleanup module">
+    <delete dir="${sunset.signal.output.dir}"/>
+    <delete dir="${sunset.signal.testoutput.dir}"/>
+  </target>
+</project>

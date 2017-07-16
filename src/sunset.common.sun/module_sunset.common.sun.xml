@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_sunset.common.sun" default="compile.module.sunset.common.sun">
+  <dirname property="module.sunset.common.sun.basedir" file="${ant.file.module_sunset.common.sun}"/>
+  
+  <property name="module.jdk.home.sunset.common.sun" value="${jdk.home.1.9}"/>
+  <property name="module.jdk.bin.sunset.common.sun" value="${jdk.bin.1.9}"/>
+  <property name="module.jdk.classpath.sunset.common.sun" value="jdk.classpath.1.9"/>
+  
+  <property name="compiler.args.sunset.common.sun" value="-encoding UTF-8 -source 9 -target 9 ${compiler.args}"/>
+  
+  <property name="sunset.common.sun.output.dir" value="${module.sunset.common.sun.basedir}"/>
+  <property name="sunset.common.sun.testoutput.dir" value="${module.sunset.common.sun.basedir}"/>
+  
+  <path id="sunset.common.sun.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="sunset.common.sun.module.production.classpath">
+    <path refid="${module.jdk.classpath.sunset.common.sun}"/>
+  </path>
+  
+  <path id="sunset.common.sun.runtime.production.module.classpath">
+    <pathelement location="${sunset.common.sun.output.dir}"/>
+  </path>
+  
+  <path id="sunset.common.sun.module.classpath">
+    <pathelement location="${sunset.common.sun.output.dir}"/>
+    <path refid="${module.jdk.classpath.sunset.common.sun}"/>
+    <pathelement location="${idea.home}/plugins/junit/lib/junit-jupiter-api-5.0.0-M4.jar"/>
+    <pathelement location="${idea.home}/plugins/junit/lib/opentest4j-1.0.0-M2.jar"/>
+  </path>
+  
+  <path id="sunset.common.sun.runtime.module.classpath">
+    <pathelement location="${sunset.common.sun.output.dir}"/>
+    <pathelement location="${idea.home}/plugins/junit/lib/junit-jupiter-api-5.0.0-M4.jar"/>
+    <pathelement location="${idea.home}/plugins/junit/lib/opentest4j-1.0.0-M2.jar"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.sunset.common.sun">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.sunset.common.sun">
+    <patternset refid="excluded.from.module.sunset.common.sun"/>
+  </patternset>
+  
+  <path id="sunset.common.sun.module.sourcepath">
+    <dirset dir="${module.sunset.common.sun.basedir}/../../src">
+      <include name="sunset.common.sun"/>
+    </dirset>
+  </path>
+  
+  <path id="sunset.common.sun.module.test.sourcepath">
+    <dirset dir="${module.sunset.common.sun.basedir}/../../test">
+      <include name="sunset.common.sun"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.sunset.common.sun" depends="compile.module.sunset.common.sun.production,compile.module.sunset.common.sun.tests" description="Compile module sunset.common.sun"/>
+  
+  <target name="compile.module.sunset.common.sun.production" description="Compile module sunset.common.sun; production classes">
+    <mkdir dir="${sunset.common.sun.output.dir}"/>
+    <javac destdir="${sunset.common.sun.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.sunset.common.sun}/javac">
+      <compilerarg line="${compiler.args.sunset.common.sun}"/>
+      <bootclasspath refid="sunset.common.sun.module.bootclasspath"/>
+      <classpath refid="sunset.common.sun.module.production.classpath"/>
+      <src refid="sunset.common.sun.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.sunset.common.sun"/>
+    </javac>
+    
+    <copy todir="${sunset.common.sun.output.dir}">
+      <fileset dir="${module.sunset.common.sun.basedir}">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.sunset.common.sun.tests" depends="compile.module.sunset.common.sun.production" description="compile module sunset.common.sun; test classes" unless="skip.tests">
+    <mkdir dir="${sunset.common.sun.testoutput.dir}"/>
+    <javac destdir="${sunset.common.sun.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.sunset.common.sun}/javac">
+      <compilerarg line="${compiler.args.sunset.common.sun}"/>
+      <bootclasspath refid="sunset.common.sun.module.bootclasspath"/>
+      <classpath refid="sunset.common.sun.module.classpath"/>
+      <src refid="sunset.common.sun.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.sunset.common.sun"/>
+    </javac>
+    
+    <copy todir="${sunset.common.sun.testoutput.dir}">
+      <fileset dir="${module.sunset.common.sun.basedir}/../../test/sunset.common.sun">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean.module.sunset.common.sun" description="cleanup module">
+    <delete dir="${sunset.common.sun.output.dir}"/>
+    <delete dir="${sunset.common.sun.testoutput.dir}"/>
+  </target>
+</project>

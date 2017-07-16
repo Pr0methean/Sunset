@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_sunset.sneakythrow" default="compile.module.sunset.sneakythrow">
+  <dirname property="module.sunset.sneakythrow.basedir" file="${ant.file.module_sunset.sneakythrow}"/>
+  
+  <property name="module.jdk.home.sunset.sneakythrow" value="${jdk.home.1.9}"/>
+  <property name="module.jdk.bin.sunset.sneakythrow" value="${jdk.bin.1.9}"/>
+  <property name="module.jdk.classpath.sunset.sneakythrow" value="jdk.classpath.1.9"/>
+  
+  <property name="compiler.args.sunset.sneakythrow" value="-encoding UTF-8 -source 9 -target 9 ${compiler.args}"/>
+  
+  <property name="sunset.sneakythrow.output.dir" value="${module.sunset.sneakythrow.basedir}"/>
+  <property name="sunset.sneakythrow.testoutput.dir" value="${module.sunset.sneakythrow.basedir}"/>
+  
+  <path id="sunset.sneakythrow.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="sunset.sneakythrow.module.production.classpath">
+    <path refid="${module.jdk.classpath.sunset.sneakythrow}"/>
+    <pathelement location="${sunset.common.output.dir}"/>
+  </path>
+  
+  <path id="sunset.sneakythrow.runtime.production.module.classpath">
+    <pathelement location="${sunset.sneakythrow.output.dir}"/>
+    <path refid="sunset.common.runtime.production.module.classpath"/>
+  </path>
+  
+  <path id="sunset.sneakythrow.module.classpath">
+    <pathelement location="${sunset.sneakythrow.output.dir}"/>
+    <path refid="${module.jdk.classpath.sunset.sneakythrow}"/>
+    <pathelement location="${sunset.common.output.dir}"/>
+  </path>
+  
+  <path id="sunset.sneakythrow.runtime.module.classpath">
+    <pathelement location="${sunset.sneakythrow.output.dir}"/>
+    <path refid="sunset.common.runtime.module.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.sunset.sneakythrow">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.sunset.sneakythrow">
+    <patternset refid="excluded.from.module.sunset.sneakythrow"/>
+  </patternset>
+  
+  <path id="sunset.sneakythrow.module.sourcepath">
+    <dirset dir="${module.sunset.sneakythrow.basedir}/../../src">
+      <include name="sunset.sneakythrow"/>
+      <include name="sunset.sneakythrow/sunset/sneakythrow"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.sunset.sneakythrow" depends="compile.module.sunset.sneakythrow.production,compile.module.sunset.sneakythrow.tests" description="Compile module sunset.sneakythrow"/>
+  
+  <target name="compile.module.sunset.sneakythrow.production" depends="compile.module.sunset.common" description="Compile module sunset.sneakythrow; production classes">
+    <mkdir dir="${sunset.sneakythrow.output.dir}"/>
+    <javac destdir="${sunset.sneakythrow.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.sunset.sneakythrow}/javac">
+      <compilerarg line="${compiler.args.sunset.sneakythrow}"/>
+      <bootclasspath refid="sunset.sneakythrow.module.bootclasspath"/>
+      <classpath refid="sunset.sneakythrow.module.production.classpath"/>
+      <src refid="sunset.sneakythrow.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.sunset.sneakythrow"/>
+    </javac>
+    
+    <copy todir="${sunset.sneakythrow.output.dir}">
+      <fileset dir="${module.sunset.sneakythrow.basedir}">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.sunset.sneakythrow.basedir}/sunset/sneakythrow">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.sunset.sneakythrow.tests" depends="compile.module.sunset.sneakythrow.production" description="compile module sunset.sneakythrow; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.sunset.sneakythrow" description="cleanup module">
+    <delete dir="${sunset.sneakythrow.output.dir}"/>
+    <delete dir="${sunset.sneakythrow.testoutput.dir}"/>
+  </target>
+</project>

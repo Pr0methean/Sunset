@@ -3,12 +3,12 @@ package sunset.serial.ctor.sun;
 import java.lang.reflect.Constructor;
 import sun.reflect.ReflectionFactory;
 
-import sunset.serial.ctor.SerializationConstructorFactory;
+import sunset.serial.ctor.ConstructorMunger;
 
 /**
- * An implementation of {@link SerializationConstructorFactory} using {@link ReflectionFactory}.
+ * An implementation of {@link ConstructorMunger} using {@link ReflectionFactory}.
  */
-public class SunSerializationConstructorFactory implements SerializationConstructorFactory {
+public class SunConstructorMunger implements ConstructorMunger {
   private final ReflectionFactory factory = ReflectionFactory.getReflectionFactory();
 
   @SuppressWarnings("unchecked")
