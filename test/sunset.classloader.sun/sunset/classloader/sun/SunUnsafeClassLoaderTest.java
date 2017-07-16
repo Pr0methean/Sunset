@@ -19,7 +19,9 @@ class SunUnsafeClassLoaderTest {
       .make()
       .getBytes();
 
-  private void testInstantiation(Class clazz) {
+  @SuppressWarnings("deprecation")
+  private void testInstantiation(Class clazz)
+      throws IllegalAccessException, InstantiationException {
     Object instance = clazz.newInstance();
     assertEquals(instance.getClass(), clazz);
     assertEquals("Hello World!", instance.toString());
@@ -37,7 +39,7 @@ class SunUnsafeClassLoaderTest {
   }
 
   @Test
-  void defineAnonymousClass() {
+  void defineAnonymousClass() throws InstantiationException, IllegalAccessException {
     Class<?> clazz = new SunUnsafeClassLoader()
         .defineAnonymousClass(getClass(), CLASS_BYTES, new Object[0]);
     assertTrue(clazz.isAnonymousClass());
