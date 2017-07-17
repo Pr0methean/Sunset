@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module type="JAVA_MODULE" version="4">
+<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
   <component name="EclipseModuleManager">
     <conelement value="org.eclipse.jdt.MODULE_PATH" />
     <src_description expected_position="0">
       <src_folder value="file://$MODULE_DIR$/" expected_position="0" />
     </src_description>
   </component>
-  <component name="NewModuleRootManager">
-    <output url="file://$MODULE_DIR$" />
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_9">
+    <output url="file://$MODULE_DIR$/target/classes" />
+    <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <content url="file://$MODULE_DIR$/../../test/sunset.classloader.sun">
       <sourceFolder url="file://$MODULE_DIR$/../../test/sunset.classloader.sun" isTestSource="true" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="jdk" jdkName="1.9" jdkType="JavaSDK" />
-    <orderEntry type="module" module-name="sunset.classloader" scope="TEST" />
-    <orderEntry type="module" module-name="sunset.common.sun" scope="TEST" />
     <orderEntry type="module-library" scope="TEST">
       <library name="JUnit5">
         <CLASSES>
@@ -29,7 +31,9 @@
       </library>
     </orderEntry>
     <orderEntry type="library" scope="TEST" name="net.bytebuddy:byte-buddy:0.7-rc2" level="project" />
-    <orderEntry type="module" module-name="sunset.common.sun" />
     <orderEntry type="module" module-name="sunset.classloader" />
+    <orderEntry type="module" module-name="sunset.common" />
+    <orderEntry type="module" module-name="sunset.common.sun" />
+    <orderEntry type="library" scope="TEST" name="Maven: junit:junit:5.0.0-M5" level="project" />
   </component>
 </module>
