@@ -3,21 +3,27 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/sunset.classloader.sun/pom.xml" />
-        <option value="$PROJECT_DIR$/src/sunset.common.sun/pom.xml" />
-        <option value="$PROJECT_DIR$/src/sunset.signal.sun/pom.xml" />
-        <option value="$PROJECT_DIR$/src/sunset.classloader/pom.xml" />
-        <option value="$PROJECT_DIR$/src/sunset.common/pom.xml" />
-        <option value="$PROJECT_DIR$/src/sunset.memory/pom.xml" />
-        <option value="$PROJECT_DIR$/src/sunset.memory.sun/pom.xml" />
-        <option value="$PROJECT_DIR$/src/sunset.serial.ctor/pom.xml" />
-        <option value="$PROJECT_DIR$/src/sunset.serial.ctor.sun/pom.xml" />
-        <option value="$PROJECT_DIR$/src/sunset.signal/pom.xml" />
-        <option value="$PROJECT_DIR$/src/sunset.sneakythrow/pom.xml" />
-        <option value="$PROJECT_DIR$/src/sunset.sneakythrow.oldjdk/pom.xml" />
-        <option value="$PROJECT_DIR$/src/sunset.sneakythrow.sun/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_9" default="false" project-jdk-name="1.9" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_9" project-jdk-name="1.9" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.9</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
 </project>
